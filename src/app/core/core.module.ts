@@ -4,9 +4,10 @@ import { RouterModule } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MatToolbarModule],
+  imports: [CommonModule, RouterModule, MatToolbarModule, MatButtonModule],
   declarations: [HeaderComponent, FooterComponent],
   exports: [HeaderComponent, FooterComponent],
 })
