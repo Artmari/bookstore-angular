@@ -1,0 +1,16 @@
+.layout-wrapper,
+.footer {
+  height: 100%;
+  margin: 0;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  height: 50px;
+  background-color: silver;
+  margin-top: auto;
+}
