@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ProductCardComponent],
   imports: [CommonModule],
   exports: [CommonModule],
 })
