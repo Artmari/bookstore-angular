@@ -5,6 +5,6 @@ import { ProductCardComponent } from './product-card/product-card.component';
 @NgModule({
   declarations: [ProductCardComponent],
   imports: [CommonModule],
-  exports: [CommonModule],
+  exports: [CommonModule, ProductCardComponent],
 })
 export class SharedModule {}

@@ -9,7 +9,7 @@ import { ProductsService } from "../services/products.service";
 export class HomeComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
-  items = [];
+  productsList = [];
 
   ngOnInit() {
     this.getData();
@@ -18,6 +18,6 @@ export class HomeComponent implements OnInit {
   getData() {
     this.productsService
       .getData()
-      .subscribe((data) => (this.items = data.responce));
+      .subscribe((data) => (this.productsList = data.responce));
   }
 }

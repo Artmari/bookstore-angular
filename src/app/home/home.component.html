@@ -1,7 +1,7 @@
-<div class="list-container">
-  <div role="list">
-    <div *ngFor="let item of items">
-      {{ item.name }}
-    </div>
-  </div>
+<div class="product-cards-wrapper">
+  <app-product-card
+    *ngFor="let product of productsList"
+    productName="{{ product.name }}"
+    productPrice="10"
+  ></app-product-card>
 </div>
