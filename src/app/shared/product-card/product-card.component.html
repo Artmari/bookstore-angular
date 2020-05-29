@@ -3,6 +3,8 @@
   <div class="product-card_name">{{ productName }}</div>
   <div class="product-card_price">price: {{ productPrice }}</div>
   <div class="product-card_add-btn">
-    <button mat-flat-button color="primary">{{ buttonName }}</button>
+    <button mat-flat-button color="primary" #matbtn id="{{productId}}" (click)="handleAddProductClick(matbtn)">
+      {{ buttonName }}
+    </button>
   </div>
 </div>
