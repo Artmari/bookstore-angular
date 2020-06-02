@@ -1,6 +1,6 @@
 <div class="product-cards-wrapper">
   <app-product-card
-    *ngFor="let product of productsList"
+    *ngFor="let product of productsStore.productsList"
     productName="{{ product.name }}"
     productId="{{ product.id }}"
     productPrice="10"

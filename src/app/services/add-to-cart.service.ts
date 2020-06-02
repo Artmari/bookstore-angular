@@ -1,17 +1,30 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { ProductsService } from "./products.service"
+import { ProductsService } from "./products.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class AddToCartService {
   constructor(private productsService: ProductsService) {}
+  productsList = this.productsService.productsList;
+  addedProducts = [];
 
-  private product = new BehaviorSubject("product");
-  sharedProduct = this.product.asObservable();
+  getProductItemFromProductsList(currentProductId) {
+    let product = this.productsList.find((product) => product.id === currentProductId);
+    this.addToCart(product);
+  }
 
-  nextProduct(product) {
-    this.product.next(product);
+  addToCart(product) {
+    this.addedProducts.push(product);
+  }
+
+  getItems() {
+    console.log(this.addedProducts);
+    return this.addedProducts;
+  }
+
+  clearCart() {
+    this.addedProducts = [];
+    return this.addedProducts;
   }
 }

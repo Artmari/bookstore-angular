@@ -7,7 +7,12 @@ import { AddToCartService } from "../services/add-to-cart.service";
   styleUrls: ["./profile.component.scss"],
 })
 export class ProfileComponent implements OnInit {
-  constructor() {}
+  constructor(private addToCartService: AddToCartService) {}
 
-  ngOnInit() {}
+  addedProducts = [];
+
+  ngOnInit() {
+    this.addedProducts = this.addToCartService.getItems();
+    console.log(this.addedProducts);
+  }
 }

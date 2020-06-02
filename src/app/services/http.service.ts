@@ -12,6 +12,5 @@ export class HttpService {
   getData() {
     return this.http.get<any>(`${this.apiBaseUrl}/products`);
   }
-
   
 }
