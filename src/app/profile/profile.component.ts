@@ -6,11 +6,11 @@ import { Product } from "../shared/product-card/Product";
   selector: "app-profile",
   templateUrl: "./profile.component.html",
   styleUrls: ["./profile.component.scss"],
-})
+})    
 export class ProfileComponent implements OnInit {
   constructor(private addToCartService: AddToCartService) {}
 
-  addedProducts: Product[];
+  addedProducts: Product[] = [];
 
   ngOnInit() {
     this.addedProducts = this.addToCartService.getItems();

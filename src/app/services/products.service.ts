@@ -8,7 +8,7 @@ import { Product } from "../shared/product-card/Product";
   providedIn: "root",
 })
 export class ProductsService {
-  productsList: Product[];
+  productsList: Product[] = [];
   constructor(private httpService: HttpService) {
     this.httpService
       .getData()

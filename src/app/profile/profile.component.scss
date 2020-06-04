@@ -1,4 +1,16 @@
-.cart_title{
+.cart_title {
   text-align: center;
   padding: 20px;
 }
+
+.cart_added-item {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  line-height: 40px;
+}
+
+.cart_item-name{
+  padding-right: 10px;
+}
+

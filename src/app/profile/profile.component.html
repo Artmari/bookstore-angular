@@ -2,7 +2,10 @@
 <div class="cart_added-items-container">
   <ul>
     <li class="cart_added-item" *ngFor="let item of addedProducts">
-      {{ item.name }}
+      <span class="cart_item-name">{{ item.name }}</span>
+      <button class="cart_remove-item" mat-mini-fab color="accent">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
     </li>
   </ul>
 </div>
