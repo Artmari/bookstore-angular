@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ProductsService } from "./products.service";
+import { Product } from "../shared/product-card/Product";
 
 @Injectable({
   providedIn: "root",
@@ -7,19 +8,20 @@ import { ProductsService } from "./products.service";
 export class AddToCartService {
   constructor(private productsService: ProductsService) {}
   productsList = this.productsService.productsList;
-  addedProducts = [];
+  addedProducts: Product[];
 
-  getProductItemFromProductsList(currentProductId) {
-    let product = this.productsList.find((product) => product.id === currentProductId);
+  getProductItemFromProductsList(currentProductId: string) {
+    let product: Product = this.productsList.find(
+      (product) => product.id === currentProductId
+    );
     this.addToCart(product);
   }
 
-  addToCart(product) {
+  addToCart(product :Product) {
     this.addedProducts.push(product);
   }
 
-  getItems() {
-    console.log(this.addedProducts);
+  getItems(): Product[] {
     return this.addedProducts;
   }
 

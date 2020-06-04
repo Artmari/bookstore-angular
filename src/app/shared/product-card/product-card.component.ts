@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 import { AddToCartService } from "../../services/add-to-cart.service";
+import { Product } from "./Product";
 
 @Component({
   selector: "app-product-card",
@@ -10,17 +11,16 @@ import { AddToCartService } from "../../services/add-to-cart.service";
 export class ProductCardComponent implements OnInit {
   constructor(private addToCartService: AddToCartService) {}
 
-  @Input() product: any;
+  @Input() product: Product;
   @Input() productName: string;
-  @Input() productPrice: string;
+  @Input() productPrice: number;
   @Input() productId: string;
   @Input() buttonName: string;
 
   ngOnInit(): void {}
 
   handleAddProductClick(evnt) {
-    let productId = evnt._elementRef.nativeElement.id;
-    console.log(productId);
+    let productId :string = evnt._elementRef.nativeElement.id;
     this.addToCartService.getProductItemFromProductsList(productId);
   }
 }

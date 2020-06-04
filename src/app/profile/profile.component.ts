@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AddToCartService } from "../services/add-to-cart.service";
+import { Product } from "../shared/product-card/Product";
 
 @Component({
   selector: "app-profile",
@@ -9,10 +10,9 @@ import { AddToCartService } from "../services/add-to-cart.service";
 export class ProfileComponent implements OnInit {
   constructor(private addToCartService: AddToCartService) {}
 
-  addedProducts = [];
+  addedProducts: Product[];
 
   ngOnInit() {
     this.addedProducts = this.addToCartService.getItems();
-    console.log(this.addedProducts);
   }
 }
